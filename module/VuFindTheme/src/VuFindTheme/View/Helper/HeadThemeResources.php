@@ -96,13 +96,8 @@ class HeadThemeResources extends \Laminas\View\Helper\AbstractHelper
      */
     protected function addMetaTags()
     {
-        // Set up encoding:
-        $headMeta = $this->getView()->plugin('headMeta');
-        $headMeta()->prependHttpEquiv(
-            'Content-Type', 'text/html; charset=' . $this->container->getEncoding()
-        );
-
         // Set up generator:
+        $headMeta = $this->getView()->plugin('headMeta');
         $generator = $this->container->getGenerator();
         if (!empty($generator)) {
             $headMeta()->appendName('Generator', $generator);
