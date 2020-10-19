@@ -67,8 +67,8 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?=$this->transEsc("Language")?> <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <?php foreach ($this->layout()->allLangs as $langCode => $langName): ?>
-                  <li<?=$this->layout()->userLang == $langCode ? ' class="active"' : ''?>>
-                    <a href="<?=$this->escapeHtmlAttr($this->url()->addQueryParameters(['lng' => $langCode])) ?>" rel="nofollow">
+                  <li<?=$this->layout()->userLang == $langCode ? ' class="active"' : ''?> lang="<?=$langCode?>">
+                    <a hreflang="<?=$langCode; ?>" href="<?=$this->escapeHtmlAttr($this->url()->addQueryParameters(['lng' => $langCode])) ?>" rel="nofollow">
                       <?=$this->displayLanguageOption($langName) ?>
                     </a>
                   </li>
